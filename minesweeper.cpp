@@ -1,16 +1,17 @@
 #include <iostream>
 #include "minesweeper_lib.h"
 
-char *createBoard(std::size_t xdim, std::size_t ydim);
+char *createBoard(size_t xdim, size_t ydim);
 void cleanBoard(char *board);
-void printBoard(char *board, std::size_t xdim, std::size_t ydim); 
-void hideBoard(char *board, std::size_t xdim, std::size_t ydim); 
-int mark(char *board, std::size_t xdim, std::size_t ydim, std::size_t xloc, std::size_t yloc); 
-bool isGameWon(char *board, std::size_t xdim, std::size_t ydim);
-void computeNeighbors(char *board, std::size_t xdim, std::size_t ydim); 
-int reveal(char *board, std::size_t xdim, std::size_t ydim, std::size_t xloc, std::size_t yloc);
+void printBoard(char *board, size_t xdim, size_t ydim);
+void hideBoard(char *board, size_t xdim, size_t ydim);
+int mark(char *board, size_t xdim, size_t ydim, size_t xloc, size_t yloc);
+bool isGameWon(char *board, size_t xdim, size_t ydim);
+void computeNeighbors(char *board, size_t xdim, size_t ydim);
+int reveal(char *board, size_t xdim, size_t ydim, size_t xloc, size_t yloc);
 
-char *createBoard(std::size_t xdim, std::size_t ydim) {
+
+char *createBoard(size_t xdim, size_t ydim) {
     char *array{new char[xdim * ydim]{}};
     return array;
 }
@@ -18,32 +19,32 @@ void cleanBoard(char *board) {
     delete[] board;
     board = nullptr;
 }
-void printBoard(char *board, std::size_t xdim, std::size_t ydim) {
-    for (std::size_t i{}; i < (xdim * ydim); ++i) {
+void printBoard(char *board, size_t xdim, size_t ydim) {
+    for (size_t i{}; i < (xdim * ydim); ++i) {
         if ((board[i] & markedBit()) == markedBit()) std::cout << 'M';
         else if ((board[i] & hiddenBit()) == hiddenBit()) std::cout << '*';
         else std::cout << (board[i] & valueMask());
         if ((i + 1) % xdim == 0) std::cout << std::endl;
     }
 }
-void hideBoard(char *board, std::size_t xdim, std::size_t ydim) {
-    for (std::size_t i{}; i < (xdim * ydim); ++i) {
+void hideBoard(char *board, size_t xdim, size_t ydim) {
+    for (size_t i{}; i < (xdim * ydim); ++i) {
         board[i] = board[i] | hiddenBit();
     } 
 }
-int mark(char *board, std::size_t xdim, std::size_t ydim, std::size_t xloc, std::size_t yloc) {
-    std::size_t i{(yloc * xdim) + xloc};
+int mark(char *board, size_t xdim, size_t ydim, size_t xloc, size_t yloc) {
+    size_t i{(yloc * xdim) + xloc};
     if (((board[i] & hiddenBit()) != hiddenBit()) && ((board[i] & markedBit()) != markedBit())) return 2;
     board[i] ^= markedBit();
     return 0;
 }
-bool isGameWon(char *board, std::size_t xdim, std::size_t ydim) {
+bool isGameWon(char *board, size_t xdim, size_t ydim) {
     for (int i{}; i < xdim * ydim; ++i) {
         if (((board[i] & hiddenBit()) == hiddenBit()) && ((board[i] & valueMask()) != 9)) return false;
     }
     return true;
 }
-void computeNeighbors(char *board, std::size_t xdim, std::size_t ydim) {
+void computeNeighbors(char *board, size_t xdim, size_t ydim) {
    int xint{};
     while (xint < xdim) ++xint;
     for (int i{}; i < xdim * ydim; ++i) {
@@ -59,7 +60,7 @@ void computeNeighbors(char *board, std::size_t xdim, std::size_t ydim) {
         }
     }
 }
-int reveal(char *board, std::size_t xdim, std::size_t ydim, std::size_t xloc, std::size_t yloc) {
+int reveal(char *board, size_t xdim, size_t ydim, size_t xloc, size_t yloc) {
     int xint{}, yl{}, xl{};
     while (xint < xdim) ++xint;
     while (yl < yloc) ++yl;
