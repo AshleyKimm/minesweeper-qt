@@ -1,6 +1,4 @@
-🚧 **Work in Progress**: Currently refactoring my original console-based Minesweeper game into a GUI application. 🚧
-
-You can check out the original project here: [minesweeper-game](https://github.com/AshleyKimm/minesweeper-game)
+You can check out the original console-based project here: [minesweeper-game](https://github.com/AshleyKimm/minesweeper-game)
 
 # Version 1.0 (as of June 19th)
 
