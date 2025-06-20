@@ -21,8 +21,7 @@ You can check out the original console-based project here: [minesweeper-game](ht
 ## Game page contents & Functionalities
 | Game page - before reveal  | Game page - after reveal |
 | ------------- | ------------- |
-| ![image](https://github.com/user-attachments/assets/e982ed1b-c057-4b19-b82a-dd34421ade01) | ![image](https://github.com/user-attachments/assets/d44ffe0b-8418-4f3c-863c-692306484b88)
-  |
+| ![image](https://github.com/user-attachments/assets/e982ed1b-c057-4b19-b82a-dd34421ade01) | ![image](https://github.com/user-attachments/assets/c59e61a8-303d-432c-b7c8-3ff5510540ad) |
 
 ### Functionalities:
 - QPushButton is used for each cell
