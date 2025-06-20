@@ -5,7 +5,7 @@ You can check out the original console-based project here: [minesweeper-game](ht
 ## Main page contents & Functionalities
 | Main page  |
 | ------------- | 
-| ![image](https://github.com/user-attachments/assets/e5373dd1-f8b2-40d1-9d77-59e4a51876b3) | 
+| ![image](https://github.com/user-attachments/assets/0c08172d-860f-4815-8416-38a1d26e7cfc) | 
 
 
 ### Functionalities:
@@ -16,12 +16,12 @@ You can check out the original console-based project here: [minesweeper-game](ht
 - When invalid value(s) are entered:
 <br>
 
-![image](https://github.com/user-attachments/assets/f930e2ca-021b-4392-bf30-63d2b6bf296a)
+![image](https://github.com/user-attachments/assets/6f0d97a3-a8e5-44f8-98a0-627a8e811058)
 
 ## Game page contents & Functionalities
 | Game page - before reveal  | Game page - after reveal |
 | ------------- | ------------- |
-| ![image](https://github.com/user-attachments/assets/e982ed1b-c057-4b19-b82a-dd34421ade01) | ![image](https://github.com/user-attachments/assets/e6249c8b-9da5-4a50-833e-4bd16dd0f579) |
+| ![image](https://github.com/user-attachments/assets/d08f3250-f61b-42e8-92ec-45f1f861dc7a) | ![image](https://github.com/user-attachments/assets/e6249c8b-9da5-4a50-833e-4bd16dd0f579) |
 
 ### Functionalities:
 - QPushButton is used for each cell
