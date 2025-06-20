@@ -46,6 +46,7 @@ void MainWindow::beginButton()
             btn->setProperty("col", col);
             btn->setProperty("row", row);
             btn->installEventFilter(this);
+            cellReveal(col, row);
         }
     }
 }
@@ -78,7 +79,10 @@ void MainWindow::cellFlag(int x, int y)
 
     QString current = btn->text();
     if (current == "🚩") btn->setText("");
-    else btn->setText("🚩");
+    else {
+        btn->setText("🚩");
+        btn->setStyleSheet("background-color: grey;");
+    }
 
     mark(board, xdim, ydim, x, y);
 
@@ -90,61 +94,56 @@ void MainWindow::cellReveal(int x, int y)
     int result = reveal(board, xdim, ydim, x, y);
     int value = board[y * xdim + x] & valueMask();
 
-    if (result == 9) {
-        btn->setText("💣");
-        btn->setStyleSheet("background-color: red;");
-        QMessageBox::information(this, "You lost!", "You clicked a mine!");
-        return;
-    }
+    // if (result == 1 || result == 2) return;
 
-    if (result == 1 || result == 2) {
-        // Marked or already revealed
-        return;
-    }
-    btn->setEnabled(false);
+
+    QString colour = "";
 
     switch (value) {
         case 0:
             btn->setText("");
-            btn->setStyleSheet("background-color: lightgray;");
+            colour = "302151";
             break;
         case 1:
             btn->setText("1");
-            btn->setStyleSheet("color: blue; font-weight: bold;");
+            colour = "5C2247";
             break;
         case 2:
             btn->setText("2");
-            btn->setStyleSheet("color: green; font-weight: bold;");
+            colour = "89233E";
             break;
         case 3:
             btn->setText("3");
-            btn->setStyleSheet("color: red; font-weight: bold;");
+            colour = "B52434";
             break;
         case 4:
             btn->setText("4");
-            btn->setStyleSheet("color: navy; font-weight: bold;");
+            colour = "B52434";
             break;
         case 5:
             btn->setText("5");
-            btn->setStyleSheet("color: maroon; font-weight: bold;");
+            colour = "CC2530";
             break;
         case 6:
             btn->setText("6");
-            btn->setStyleSheet("color: teal; font-weight: bold;");
+            colour = "E2252B";
             break;
         case 7:
             btn->setText("7");
-            btn->setStyleSheet("color: black; font-weight: bold;");
+            colour = "F82626";
             break;
         case 8:
             btn->setText("8");
-            btn->setStyleSheet("color: gray; font-weight: bold;");
+            colour = "E80409";
             break;
         default:
-            btn->setText("?");
-            btn->setStyleSheet("color: black;");
+            btn->setText("💣");
+            colour = "FF0000";
+            QMessageBox::information(this, "You lost!", "You clicked a mine!");
             break;
         }
+
+        btn->setStyleSheet("background-color: #" + colour + "; color: black; font-weight: bold;");
 
     if (isGameWon(board, xdim, ydim)) {
         QMessageBox::information(this, "Victory", "You revealed all safe cells!");
