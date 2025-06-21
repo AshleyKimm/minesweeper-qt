@@ -1,6 +1,6 @@
 You can check out the original console-based project here: [minesweeper-game](https://github.com/AshleyKimm/minesweeper-game)
 
-# Version 1.0 (as of June 19th)
+# Version 1.1 (as of June 21st)
 
 ## Main page contents & Functionalities
 | Main page  |
@@ -28,9 +28,18 @@ You can check out the original console-based project here: [minesweeper-game](ht
 - Right-click: reveals cells
 - Left-click: flags cells
 - When the mine is clicked:
+
+### Features:
+- Clicking on a field with a value of 0 (no mines in its adjacent fields) will automatically reveal its adjacent cells
+- Number of mines entered by the user on the main page is displayed on the game page
+
 <br>
 
 ![image](https://github.com/user-attachments/assets/a9f2cce0-67f4-4b07-93bd-c80be44705eb)
+
+## Demo
+
+https://github.com/user-attachments/assets/b7fd3366-ce3c-4c1e-8adf-0d457f3083d3
 
 
 # What's Next?
