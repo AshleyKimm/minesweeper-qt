@@ -37,5 +37,7 @@ You can check out the original console-based project here: [minesweeper-game](ht
 
 - [ ] Implement a function where the user can restart from the informational dialog (brings the user back to the main page, clears the board)
 - [ ] Make the main page UI more engaging
-- [ ] Make the game page UI more engaging (especially the cells/buttons)
+- [x] Make the game page UI more engaging (especially the cells/buttons)
+- [ ] Instead of grabbing the data straight from the button's text, check it from the board array (by converting the x and y values to the array index value)
+  - Prevent users from manipulating the values with the dev tool 
 - [ ] Later: maybe add effects?
