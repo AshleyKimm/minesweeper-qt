@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>840</width>
+    <height>626</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,12 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>801</width>
-      <height>591</height>
+      <width>841</width>
+      <height>631</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);</string>
     </property>
     <widget class="QWidget" name="mainPage">
      <widget class="QWidget" name="gridLayoutWidget">
@@ -29,15 +32,21 @@
        <rect>
         <x>200</x>
         <y>100</y>
-        <width>391</width>
-        <height>351</height>
+        <width>431</width>
+        <height>361</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
        <item row="2" column="0">
         <widget class="QLabel" name="label_3">
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+         <property name="font">
+          <font>
+           <family>Batang</family>
+           <pointsize>11</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Number of rows:</string>
@@ -46,8 +55,11 @@
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+         <property name="font">
+          <font>
+           <family>Batang</family>
+           <pointsize>11</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Number of columns:</string>
@@ -77,8 +89,11 @@
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_4">
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+         <property name="font">
+          <font>
+           <family>Batang</family>
+           <pointsize>11</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Number of mines:</string>
@@ -87,8 +102,11 @@
        </item>
        <item row="4" column="0" colspan="2">
         <widget class="QPushButton" name="beginButton">
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+         <property name="font">
+          <font>
+           <family>Batang</family>
+           <pointsize>11</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Let's begin!</string>
@@ -97,25 +115,63 @@
        </item>
        <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="label">
-         <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+         <property name="font">
+          <font>
+           <family>Batang</family>
+           <pointsize>11</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
          </property>
          <property name="text">
           <string>Enter the size of the board (maximum: 25):</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>591</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Batang</family>
+        <pointsize>11</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>minesweeper</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="gamePage">
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>741</width>
-        <height>481</height>
+        <x>10</x>
+        <y>50</y>
+        <width>811</width>
+        <height>571</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_4"/>
@@ -123,17 +179,46 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>10</y>
-        <width>501</width>
-        <height>41</height>
+        <x>570</x>
+        <y>20</y>
+        <width>271</width>
+        <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Batang</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;Batang&quot;;</string>
+       <string notr="true"/>
       </property>
       <property name="text">
-       <string>Left-click to mark, right-click to reveal!</string>
+       <string>Left-click to reveal, right-click to flag!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Batang</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>

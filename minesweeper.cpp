@@ -1,5 +1,6 @@
 #include <iostream>
 #include "minesweeper_lib.h"
+#include <QDebug>
 
 char *createBoard(size_t xdim, size_t ydim);
 void cleanBoard(char *board);
@@ -20,13 +21,19 @@ void cleanBoard(char *board) {
     board = nullptr;
 }
 void printBoard(char *board, size_t xdim, size_t ydim) {
-    for (size_t i{}; i < (xdim * ydim); ++i) {
-        if ((board[i] & markedBit()) == markedBit()) std::cout << 'M';
-        else if ((board[i] & hiddenBit()) == hiddenBit()) std::cout << '*';
-        else std::cout << (board[i] & valueMask());
-        if ((i + 1) % xdim == 0) std::cout << std::endl;
+    for (size_t y = 0; y < ydim; ++y) {
+        QString row;
+        for (size_t x = 0; x < xdim; ++x) {
+            size_t i = y * xdim + x;
+            if ((board[i] & markedBit()) == markedBit()) row += 'M';
+            else if ((board[i] & hiddenBit()) == hiddenBit()) row += '*';
+            else row += QString::number(board[i] & valueMask());
+        }
+        qDebug() << row;
+        qDebug() << " ";
     }
 }
+
 void hideBoard(char *board, size_t xdim, size_t ydim) {
     for (size_t i{}; i < (xdim * ydim); ++i) {
         board[i] = board[i] | hiddenBit();
@@ -36,6 +43,7 @@ int mark(char *board, size_t xdim, size_t ydim, size_t xloc, size_t yloc) {
     size_t i{(yloc * xdim) + xloc};
     if (((board[i] & hiddenBit()) != hiddenBit()) && ((board[i] & markedBit()) != markedBit())) return 2;
     board[i] ^= markedBit();
+    if ((board[i] & markedBit()) != markedBit()) return 1;
     return 0;
 }
 bool isGameWon(char *board, size_t xdim, size_t ydim) {
