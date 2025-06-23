@@ -1,7 +1,7 @@
 # 🧨 Minesweeper GUI
 You can check out the original console-based project here: [minesweeper-game](https://github.com/AshleyKimm/minesweeper-game)
 
-## 📌 Version 1.0 (as of June 19th)
+## 📌 Version 1.1 (2025-06-21)
 
 ## 🏠 Main page contents & Functionalities
 | Main page  |
@@ -29,14 +29,17 @@ You can check out the original console-based project here: [minesweeper-game](ht
 - Each cell is represented by a QPushButton
 - Right-click: reveals cells
 - Left-click: flags cells
+- The number of mines is displayed on the top of the game page
+- Integrated a logic where if a cell does not have a mine in its adjacent cells, it reveals its 8 adjacent cells
 
   
 | If a mine is clicked:  |
 | ------------- | 
 | ![image](https://github.com/user-attachments/assets/f703101c-c8e0-4db6-b526-16366e5efa3e) | 
 
+## 📷 Demo
 
-
+https://github.com/user-attachments/assets/b7fd3366-ce3c-4c1e-8adf-0d457f3083d3
 # 🔜 What's Next?
 
 - [ ] Implement a function where the user can restart from the informational dialog (brings the user back to the main page, clears the board)
