@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>minesweeper</h1>
+
+    <section id="setup">
+      <p>Enter the size of the board (maximum: 25):</p>
+      <form id="setup-form">
+        <label>Number of rows: <input id="rows" type="number" min="1" max="25" value="10" required></label>
+        <label>Number of columns: <input id="cols" type="number" min="1" max="25" value="10" required></label>
+        <label>Number of mines: <input id="mines" type="number" min="1" value="15" required></label>
+        <p id="setup-error" class="error" hidden>Please enter valid value(s)</p>
+        <button type="submit">Let's begin!</button>
+      </form>
+    </section>
+
+    <section id="game" hidden>
+      <p class="hint">Left-click to reveal, right-click to flag!</p>
+      <div class="bar">
+        <span id="mine-count"></span>
+        <button id="flag-mode" type="button" aria-pressed="false">🚩 Flag mode: off</button>
+      </div>
+      <div id="board" role="grid"></div>
+      <p id="status" aria-live="polite"></p>
+      <div class="bar">
+        <button id="restart" type="button">New game</button>
+        <button id="back" type="button">Change size</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="minesweeper.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

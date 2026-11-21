@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Munro";
+  src: url("munro.ttf") format("truetype");
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: rgb(16, 17, 26);
+  color: white;
+  font-family: "Munro", "Courier New", monospace;
+  font-size: 18px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 { font-size: 48px; margin: 0 0 16px; }
+
+#setup-form {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+label { display: flex; gap: 12px; align-items: center; }
+
+input {
+  width: 70px;
+  font: inherit;
+  background: black;
+  color: white;
+  border: 1px solid #555;
+  padding: 4px 6px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: #302151;
+  color: white;
+  border: 1px solid #5C2247;
+  padding: 6px 14px;
+}
+button:hover { background: #5C2247; }
+button[aria-pressed="true"] { background: #B52434; }
+
+#setup-form button[type="submit"] { align-self: center; }
+
+.error { color: #F82626; margin: 0; }
+.hint { margin-top: 0; }
+
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+/* Cells shrink on narrow screens so a 25-wide board still fits on a phone. */
+#board {
+  --size: min(30px, calc((100vw - 32px) / var(--cols)));
+  display: inline-grid;
+  grid-template-columns: repeat(var(--cols), var(--size));
+  background: black;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cell {
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border: 1px solid #222;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: calc(var(--size) * 0.6);
+  line-height: 1;
+}
+.cell.hidden:hover { background: #1c1c2a; }
+.cell:not(.hidden) { cursor: default; }
+.cell.mine { background: white; }
+#board.over .cell { cursor: default; }
+
+#status { min-height: 1.5em; font-size: 22px; }
