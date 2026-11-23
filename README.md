@@ -1,3 +1,5 @@
+**Claude is only used for building the web version for demos.**
+
 # 🧨 Minesweeper GUI
 You can check out the original console-based project here: [minesweeper-game](https://github.com/AshleyKimm/minesweeper-game)
 
